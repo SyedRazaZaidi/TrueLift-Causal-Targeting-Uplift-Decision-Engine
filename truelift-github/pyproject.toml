@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "truelift"
+version = "1.0.0"
+description = "TrueLift — full causal decisioning engine for targeting, allocation, and audit."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Syed Muhammad Raza Zaidi" }]
+license = { text = "MIT" }
+dependencies = [
+  "fastapi>=0.115.0",
+  "uvicorn[standard]>=0.32.0",
+  "pydantic>=2.9.0",
+  "pydantic-settings>=2.6.0",
+  "numpy>=1.26.0",
+  "pandas>=2.2.0",
+  "pyarrow>=16.0.0",
+  "torch>=2.2.0",
+  "lightgbm>=4.5.0",
+  "scikit-learn>=1.5.0",
+  "scipy>=1.13.0",
+  "joblib>=1.4.0",
+  "python-multipart>=0.0.12",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3.0"]
+
+[project.scripts]
+truelift = "truelift.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+truelift = ["serve/static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

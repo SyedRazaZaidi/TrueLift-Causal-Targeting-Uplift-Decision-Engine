@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TrueLift — causal targeting control plane</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/app.css?v=4" />
+  <link rel="icon" href="/assets/favicon.svg" />
+</head>
+<body>
+  <div id="boot">
+    <div class="boot-inner">
+      <div class="boot-ring"></div>
+      <p>Loading campaign holdout</p>
+    </div>
+  </div>
+  <div class="shell" id="shell" hidden>
+    <aside class="rail">
+      <div class="rail-brand">
+        <span class="mark"></span>
+        <div>
+          <strong>TrueLift</strong>
+          <span>Causal targeting</span>
+        </div>
+      </div>
+      <nav class="rail-nav" id="nav"></nav>
+      <div class="rail-foot">
+        <div class="ship-pill" id="ship">—</div>
+        <a class="rail-dl" id="rail-export" href="/api/export.csv?budget=0.3">Export list</a>
+      </div>
+    </aside>
+    <div class="main">
+      <header class="hero" id="hero"></header>
+      <section class="content" id="app"></section>
+    </div>
+  </div>
+  <aside id="drawer" class="drawer" hidden aria-label="Person dossier">
+    <div class="drawer-head">
+      <strong id="drawer-title">Person</strong>
+      <button type="button" class="drawer-close" id="drawer-close" aria-label="Close">×</button>
+    </div>
+    <div id="drawer-body" class="drawer-body"></div>
+  </aside>
+  <div id="drawer-scrim" class="drawer-scrim" hidden></div>
+  <script src="/assets/app.js?v=4"></script>
+</body>
+</html>
